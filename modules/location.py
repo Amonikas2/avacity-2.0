@@ -14,7 +14,7 @@ class Location(Module):
 
     def room(self, msg, client):
         subcommand = msg[1].split(".")[2]
-        if subcommand in ["u", "m", "k", "sa", "sl", "bd", "lks", "hs",
+        if subcommand in ["u", "m", "k", "sa", "sl", "bd", "lks", "hs", "sex",
                           "ks", "hg", "gf"]:
             msg.pop(0)
             if msg[1]["uid"] != client.uid:

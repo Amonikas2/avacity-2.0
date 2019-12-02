@@ -111,7 +111,7 @@ class Component(Module):
             sccss = False
             for tmp in self.server.online.copy():
                 if tmp.uid == uid:
-                    tmp.send(["cp.ms.rmm", {"sndr": client.uid,
+                    tmp.send(["cp.ms.ssm", {"sndr": client.uid,
                                             "txt": message}])
                     sccss = True
                     break
@@ -133,6 +133,8 @@ class Component(Module):
             return self.unban_user(uid, client)
         elif command == "reset":
             uid = msg.split()[1]
+        elif command == "unmute":
+            uid = msg.split()[1]
             return self.reset_user(uid, client)
 
     def send_system_message(self, msg, client):
@@ -141,7 +143,7 @@ class Component(Module):
             return self.no_permission(client)
         message = msg.split("!ssm ")[1]
         for tmp in self.server.online.copy():
-            tmp.send(["cp.ms.rsm", {"txt": message}])
+            tmp.send(["cp.ms.ssm", {"txt": message}])
 
     def mute_player(self, msg, client):
         user_data = self.server.get_user_data(client.uid)
