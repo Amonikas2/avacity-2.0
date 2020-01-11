@@ -6,8 +6,8 @@ XML = """<?xml version="1.0"?>
 </cross-domain-policy>
 """.encode()
 
-MAX_NAME_LEN = 200
-ROOM_LIMIT = 150
+MAX_NAME_LEN = 40
+ROOM_LIMIT = 15
 EVENT_ROOM_LIMIT = 40
 FREE_GOLD = True
 
@@ -21,11 +21,11 @@ room_items = [{"tpid": "wall15", "d": 3, "oid": 1, "x": 0.0, "y": 0.0,
                "z": 0.0, "rid": "outside"}]
 campaigns = []
 
-clans = True
+clans = False
 mobile = True
 fortune2 = True
 professions = True
-reputation = True
+reputation = False
 
 if clans:
     campaigns.append({"st": 1, "v": 1,
